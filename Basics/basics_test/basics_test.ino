@@ -1,4 +1,4 @@
-char Spielfeldstatus[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+int Spielfeldstatus[] = {1, 1, 1, 1, 2, 3, 9, 8, 6};
 
 
 
@@ -14,21 +14,37 @@ void loop() {
 }
 
 void UserIn(){
-  Serial.println(Spielfeldstatus[0]);
-  Serial.print("|");
-  Serial.print(Spielfeldstatus[1]);
-  Serial.print("|");
-  Serial.println(Spielfeldstatus[2]);
+  
+   int var = 0;
+    bool Display[8];
+
+  while(var < 8) {
+    if (Spielfeldstatus[var] == 0){
+      
+      Display[var] == false;
+      }else{
+        Display[var] == true;
+      }
+    var++;
+  }
+
+  Serial.println();
+  Serial.print(Display[0]);
+  Serial.print(" | ");
+  Serial.print(Display[1]);
+  Serial.print(" | ");
+  Serial.println(Display[2]);
   Serial.println("------------");
-  Serial.print(Spielfeldstatus[3]);
-  Serial.print("|");
-  Serial.print(Spielfeldstatus[4]);
-  Serial.print("|");
-  Serial.println(Spielfeldstatus[5]);
+  Serial.print(Display[3]);
+  Serial.print(" | ");
+  Serial.print(Display[4]);
+  Serial.print(" | ");
+  Serial.println(Display[5]);
   Serial.println("------------");
-  Serial.print(Spielfeldstatus[6]);
-  Serial.print("|");
-  Serial.print(Spielfeldstatus[7]);
-  Serial.print("|");
-  Serial.print(Spielfeldstatus[9]);
-}
+  Serial.print(Display[6]);
+  Serial.print(" | ");
+  Serial.print(Display[7]);
+  Serial.print(" | ");
+  Serial.print(Display[8]);
+
+  }
